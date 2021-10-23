@@ -1,0 +1,1 @@
+{"packagePrefix":"com.freshi.presignphoto","lastDeploymentRegionId":"ap-southeast-2","regionConfig":{"ap-southeast-2":{"bucket":"lambda-function-bucket-ap-southeast-2-freshiproject","stack":"freshi-presignPhoto-stack"}}}

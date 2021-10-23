@@ -1,0 +1,11 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+        java: 8
+  build:
+    commands:
+      - sam package --template-file serverless.template --s3-bucket lambda-function-bucket-ap-southeast-2-freshiproject --output-template-file packaged-template.yml
+artifacts:
+  files:
+    - packaged-template.yml

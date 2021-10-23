@@ -1,0 +1,18 @@
+{
+  "Description" : "Freshi - microservice that presign photo and return URL.",
+  "Resources" : {
+    "presignPhoto" : {
+      "Type" : "AWS::Serverless::Function",
+      "Properties" : {
+        "Handler" : "com.freshi.presignphoto.function.presignURL",
+        "Runtime" : "java8",
+        "CodeUri" : "./target/presignphoto-1.0.0.jar",
+        "Events" : {
+          "ApiEvent" : {
+            "Type" : "HttpApi"
+          }
+        }
+      }
+    }
+  }
+}

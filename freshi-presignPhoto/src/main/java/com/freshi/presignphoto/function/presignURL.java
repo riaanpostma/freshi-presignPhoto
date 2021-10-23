@@ -24,7 +24,7 @@ import java.util.regex.Pattern;
  * photo's that need to be uploaded to the content store. URL expires on same
  * day, and allow client to upload images (jpg & png) directly from HTML.
  */
-public class presignURL implements RequestHandler<Map, Map> {
+public class presignURL implements RequestHandler<Map<String, String>, Map<String, String>> {
 	// Variables...
 	private static final float MAX_WIDTH = 100;
 	private static final float MAX_HEIGHT = 100;
@@ -42,7 +42,7 @@ public class presignURL implements RequestHandler<Map, Map> {
 	/**
 	 * main lambda function
 	 */
-	public Map handleRequest(Map input, Context context) {
+	public Map<String, String> handleRequest(Map<String, String> input, Context context) {
 		// initiate response object. Structure:<String, String> "filename={name}":"URL"
 		Map<String, String> response = new HashMap<String, String>();
 		

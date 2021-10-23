@@ -9,6 +9,7 @@ import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
+import com.amazonaws.services.lambda.runtime.events.*;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -47,7 +48,8 @@ public class presignURL implements RequestHandler<Map, Map> {
 		
 		if (input != null) {
 			// TODO can remove the following...
-			//context.getLogger().log("EVENT: " + gson.toJson(input) + "\n\n");
+			context.getLogger().log("EVENT: " + gson.toJson(input) + "\n\n");
+			context.getLogger().log("EVENT TYPE: " + input.getClass() + "\n\n");
 			//context.getLogger().log("TEST TYPE....\n");
 			// iterate through filename key to determine image mime type valid
 			//context.getLogger().log("FILE COUNT: " + input.size() + "\n");
